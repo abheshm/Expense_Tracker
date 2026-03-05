@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions</title>
+</head>
+<body>
+    <h1>My Transactions</h1>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.type }}</td>
+            <td>₹{{ transaction.amount }}</td>
+            <td>{{ transaction.description }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No transactions yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
