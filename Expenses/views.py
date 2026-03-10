@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Transaction
 # Create your views here.
 def transaction_list(request):
-    transactions=Transaction.objects.all()
+    transactions=Transaction.objects.all().order_by('-date')
     return render(request,'expenses/transaction_list.html',{'transactions':transactions})
 
 def add_transaction(request):
@@ -16,3 +16,8 @@ def add_transaction(request):
 
         return redirect('/')
     return render(request,'expenses/add_transaction.html')
+
+def delete_transaction(request,id):
+    transaction = Transaction.objects.get(id=id)
+    transaction.delete()
+    return redirect('/')

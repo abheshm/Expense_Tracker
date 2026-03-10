@@ -12,6 +12,7 @@
             <th>Type</th>
             <th>Amount</th>
             <th>Description</th>
+            <th>Action</th>
         </tr>
 
         {% for transaction in transactions %}
@@ -20,6 +21,9 @@
             <td>{{ transaction.type }}</td>
             <td>₹{{ transaction.amount }}</td>
             <td>{{ transaction.description }}</td>
+            <td>
+                <a href="/delete/{{ transaction.id }}/">Delete</a>
+            </td>
         </tr>
         {% empty %}
         <tr>
