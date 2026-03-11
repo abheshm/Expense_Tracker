@@ -19,5 +19,8 @@ def add_transaction(request):
 
 def delete_transaction(request,id):
     transaction = Transaction.objects.get(id=id)
-    transaction.delete()
-    return redirect('/')
+
+    if request.method=="POST":
+        transaction.delete()
+        return redirect('/')
+    return render(request,'expenses/delete_transaction.html',{'transaction':transaction})
