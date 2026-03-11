@@ -3,7 +3,25 @@ from .models import Transaction
 # Create your views here.
 def transaction_list(request):
     transactions=Transaction.objects.all().order_by('-date')
-    return render(request,'expenses/transaction_list.html',{'transactions':transactions})
+
+    total_income = 0
+    total_expense = 0
+
+    for t in transactions:
+        if t.type =='income':
+            total_income += t.amount
+        else:
+            total_expense += t.amount
+
+    balance = total_income - total_expense 
+
+    context = {
+        'transactions' : transactions,
+        'total_income' : total_income,
+        'total_expense' : total_expense,
+        'balance' : balance
+    }
+    return render(request,'expenses/transaction_list.html',context)
 
 def add_transaction(request):
     if request.method=="POST":
