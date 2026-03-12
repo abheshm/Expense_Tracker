@@ -42,3 +42,19 @@ def delete_transaction(request,id):
         transaction.delete()
         return redirect('/')
     return render(request,'expenses/delete_transaction.html',{'transaction':transaction})
+
+def edit_transaction(request,id):
+
+    transaction = Transaction.objects.get(id=id)
+
+    if request.method=="POST":
+        transaction.amount = request.POST['amount']
+        transaction.type = request.POST['type']
+        transaction.description = request.POST['description']
+        transaction.date = request.POST['date']
+
+        transaction.save()
+
+        return redirect('/')
+    
+    return render(request,'expenses/edit_transaction.html', {"transaction":transaction})
