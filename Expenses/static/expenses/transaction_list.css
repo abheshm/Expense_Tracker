@@ -1,0 +1,116 @@
+/* Simple CSS for Transactions Page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Add Transaction Button */
+a[href="/add/"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+a[href="/add/"]:hover {
+    background-color: #45a049;
+}
+
+/* Summary Section */
+p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+strong {
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table row hover effect */
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Action links */
+td a {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Color for income and expense */
+.income {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.expense {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Empty message styling */
+td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}

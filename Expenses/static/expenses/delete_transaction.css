@@ -1,0 +1,130 @@
+/* Simple CSS for Delete Transaction Page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Paragraph Styles */
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Confirmation message */
+p:first-of-type {
+    text-align: center;
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Transaction details */
+p:nth-of-type(2) {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+    margin: 20px 0;
+}
+
+/* Transaction detail labels */
+strong {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Form Styles */
+form {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Delete Button */
+button[type="submit"] {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Cancel Link */
+a[href="/"] {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a[href="/"]:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Center the cancel link */
+form + br + a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Button container */
+.button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    button[type="submit"],
+    a[href="/"] {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    form + br + a {
+        margin-left: 0;
+    }
+}
