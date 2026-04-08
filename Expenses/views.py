@@ -21,7 +21,7 @@ def transaction_list(request):
         'total_expense' : total_expense,
         'balance' : balance
     }
-    return render(request,'expenses/transaction_list.html',context)
+    return render(request,'expenses/transaction_list2.html',context)
 
 def add_transaction(request):
     if request.method=="POST":
@@ -33,7 +33,7 @@ def add_transaction(request):
         Transaction.objects.create(amount=amount,type=type,description=description,date=date)
 
         return redirect('/')
-    return render(request,'expenses/add_transaction.html')
+    return render(request,'expenses/add_transaction1.html')
 
 def delete_transaction(request,id):
     transaction = Transaction.objects.get(id=id)
@@ -58,3 +58,12 @@ def edit_transaction(request,id):
         return redirect('/')
     
     return render(request,'expenses/edit_transaction.html', {"transaction":transaction})
+
+def show_all(request):
+    transactions = Transaction.objects.all().order_by('-date')
+
+    context = {
+        'transactions': transactions,
+    }
+    
+    return render(request, 'expenses/show_all1.html', context)

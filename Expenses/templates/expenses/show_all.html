@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.type }}</td>
+            <td>₹{{ transaction.amount }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>
+                <a href="/delete/{{ transaction.id }}/">Delete</a>
+                <a href="/edit/{{ transaction.id }}/">Edit</a> 
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No transactions yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
